@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Portfólio Hacker | Airton</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Share Tech Mono', monospace;
+      background: radial-gradient(circle at top, #020202, #000);
+      color: #00ffcc;
+      overflow-x: hidden;
+    }
+    header {
+      text-align: center;
+      padding: 60px 20px;
+    }
+    h1 {
+      font-size: 3rem;
+      text-shadow: 0 0 10px #00ffcc;
+      animation: glitch 2s infinite;
+    }
+    h2 {
+      margin-bottom: 15px;
+      color: #00ffaa;
+    }
+    section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    .card {
+      background: rgba(0, 0, 0, 0.6);
+      border: 1px solid #00ffcc;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 15px rgba(0, 255, 204, 0.3);
+    }
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    a {
+      color: #00ffcc;
+      text-decoration: none;
+    }
+    a:hover { text-shadow: 0 0 8px #00ffcc; }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      border-top: 1px solid #00ffcc;
+      font-size: 0.9rem;
+    }
+
+    @keyframes glitch {
+      0% { text-shadow: 2px 0 red, -2px 0 cyan; }
+      50% { text-shadow: -2px 0 red, 2px 0 cyan; }
+      100% { text-shadow: 2px 0 red, -2px 0 cyan; }
+    }
+
+    /* BOTÕES HACKER */
+    .btn-hacker {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 25px;
+      border: 2px solid #00ffcc;
+      color: #00ffcc;
+      font-weight: bold;
+      border-radius: 6px;
+      text-decoration: none;
+      text-shadow: 0 0 5px #00ffcc;
+      box-shadow: 0 0 10px #00ffcc;
+      transition: 0.3s;
+    }
+    .btn-hacker:hover {
+      background-color: rgba(0,255,204,0.1);
+      box-shadow: 0 0 20px #00ffcc, 0 0 30px #00ffcc inset;
+      cursor: pointer;
+    }
+
+    /* BOTÃO PEQUENO PARA RELÓGIO */
+    .btn-clock {
+      display: inline-block;
+      margin: 10px;
+      padding: 8px 15px;
+      border: 2px solid #00ffcc;
+      color: #00ffcc;
+      font-weight: bold;
+      border-radius: 6px;
+      text-decoration: none;
+      text-shadow: 0 0 5px #00ffcc;
+      box-shadow: 0 0 10px #00ffcc;
+      font-size: 0.9rem;
+      transition: 0.3s;
+    }
+    .btn-clock:hover {
+      background-color: rgba(0,255,204,0.1);
+      box-shadow: 0 0 20px #00ffcc, 0 0 30px #00ffcc inset;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <h1>&gt; Airton Oliveira</h1>
+  <p>Front-end em treinamento | HTML • CSS • JS</p>
+
+  <!-- BOTÕES HACKER -->
+  <div>
+    <!-- Currículo HTML -->
+    <a class="btn-hacker" href="https://airton72-arch.github.io/curriculo-pro/" target="_blank">
+      🧾 Currículo HTML
+    </a>
+    <!-- Relógio -->
+    <a class="btn-clock" href="https://airton72-arch.github.io/meu-site-2/" target="_blank">
+      ⏰ Relógio
+    </a>
+  </div>
+</header>
+
+<section>
+  <div class="card">
+    <h2>&gt; Sobre_mim</h2>
+    <p>Estudante de programação focado em front-end. Curto tecnologia, visual e projetos criativos. Em constante evolução 🚀</p>
+  </div>
+</section>
+
+<section>
+  <h2>&gt; Projetos</h2>
+  <div class="projects">
+    <div class="card">Relógio Digital<br><small>HTML • CSS • JS</small></div>
+    <div class="card">Calculadora<br><small>HTML • CSS • JS</small></div>
+    <div class="card">Página Hacker Neon<br><small>HTML • CSS</small></div>
+  </div>
+</section>
+
+<section>
+  <div class="card">
+    <h2>&gt; Tecnologias</h2>
+    <p>HTML | CSS | JavaScript | Git | GitHub</p>
+  </div>
+</section>
+
+<section>
+  <div class="card">
+    <h2>&gt; Contato</h2>
+    <p>Email: airton72@gmail.com</p>
+    <p>WhatsApp: 21990670499</p>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 | System Online ▓▒░</p>
+</footer>
+</body>
+</html>
