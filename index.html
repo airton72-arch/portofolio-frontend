@@ -2,216 +2,97 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Portfólio Hacker | Airton Oliveira</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Fonte Hacker -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <title>Airton_OS | Painel de Controle</title>
   <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
-
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    body { font-family: 'Share Tech Mono', monospace; background: #050505; color: #00ffcc; padding: 20px; }
+    .header { text-align: center; border-bottom: 2px solid #00ffcc; padding-bottom: 20px; margin-bottom: 30px; }
+    
+    /* Formulário Hacker */
+    .form-container { border: 1px dashed #00ffcc; padding: 20px; margin-bottom: 30px; background: rgba(0,255,204,0.05); }
+    input { background: #000; border: 1px solid #00ffcc; color: #00ffcc; padding: 10px; margin: 5px; font-family: inherit; width: 250px; }
+    button { background: #00ffcc; color: #000; border: none; padding: 10px 20px; cursor: pointer; font-family: inherit; font-weight: bold; }
+    button:hover { background: #fff; }
 
-    body {
-      font-family: 'Share Tech Mono', monospace;
-      background: radial-gradient(circle at top, #020202, #000);
-      color: #00ffcc;
-      line-height: 1.6;
-    }
-
-    header {
-      text-align: center;
-      padding: 80px 20px;
-    }
-
-    h1 {
-      font-size: 3rem;
-      text-shadow: 0 0 12px #00ffcc;
-      animation: glitch 2s infinite;
-    }
-
-    h2 {
-      color: #00ffaa;
-      margin-bottom: 15px;
-    }
-
-    main {
-      max-width: 1000px;
-      margin: auto;
-      padding: 20px;
-    }
-
-    section {
-      margin-bottom: 50px;
-    }
-
-    .card {
-      background: rgba(0, 0, 0, 0.65);
-      border: 1px solid #00ffcc;
-      border-radius: 10px;
-      padding: 25px;
-      box-shadow: 0 0 18px rgba(0, 255, 204, 0.35);
-    }
-
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-    }
-
-    .project-card h3 {
-      margin-bottom: 8px;
-      color: #00ffaa;
-    }
-
-    .project-card p {
-      font-size: 0.95rem;
-      margin-bottom: 10px;
-    }
-
-    .tech {
-      font-size: 0.85rem;
-      opacity: 0.8;
-    }
-
-    a {
-      color: #00ffcc;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-shadow: 0 0 8px #00ffcc;
-    }
-
-    footer {
-      text-align: center;
-      padding: 25px;
-      border-top: 1px solid #00ffcc;
-      font-size: 0.85rem;
-      opacity: 0.8;
-    }
-
-    /* BOTÕES */
-    .btn {
-      display: inline-block;
-      margin: 10px;
-      padding: 12px 25px;
-      border: 2px solid #00ffcc;
-      border-radius: 6px;
-      color: #00ffcc;
-      font-weight: bold;
-      text-shadow: 0 0 5px #00ffcc;
-      box-shadow: 0 0 12px #00ffcc;
-      transition: 0.3s;
-    }
-
-    .btn:hover {
-      background: rgba(0,255,204,0.1);
-      box-shadow: 0 0 25px #00ffcc inset;
-    }
-
-    /* GLITCH */
-    @keyframes glitch {
-      0% { text-shadow: 2px 0 red, -2px 0 cyan; }
-      50% { text-shadow: -2px 0 red, 2px 0 cyan; }
-      100% { text-shadow: 2px 0 red, -2px 0 cyan; }
-    }
+    /* Grid de Projetos */
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+    .card { border: 1px solid #00ffcc; padding: 20px; position: relative; background: #000; }
+    .btn-del { position: absolute; top: 10px; right: 10px; color: #ff0055; border: 1px solid #ff0055; background: none; padding: 2px 5px; cursor: pointer; }
+    .tech { color: #ff0055; display: block; margin-top: 15px; font-size: 0.8rem; }
   </style>
 </head>
-
 <body>
 
-<header>
-  <h1>&gt; Airton Oliveira</h1>
-  <p>Desenvolvedor em evolução | Front-end → Fullstack</p>
+<div class="header">
+  <h1>> AIRTON_OLIVEIRA_OS</h1>
+  <p id="status">CONECTANDO AO NÚCLEO...</p>
+</div>
 
-  <div>
-    <a class="btn" href="https://airton72-arch.github.io/curriculo-pro/" target="_blank">🧾 Currículo HTML</a>
-    <a class="btn" href="https://airton72-arch.github.io/meu-site-2/" target="_blank">⏰ Projeto Relógio</a>
+<div class="form-container">
+  <h3>[ INJETAR_NOVO_PROJETO ]</h3>
+  <input type="text" id="t" placeholder="Nome do Projeto">
+  <input type="text" id="d" placeholder="Descrição">
+  <input type="text" id="tc" placeholder="Tecnologias">
+  <button onclick="addProject()">EXECUTAR_INJEÇÃO</button>
+</div>
+
+<div class="grid" id="container">
   </div>
-</header>
 
-<main>
+<script>
+  const API = 'http://localhost:3000/api/projects';
 
-  <!-- SOBRE -->
-  <section>
-    <article class="card">
-      <h2>&gt; Sobre_mim</h2>
-      <p>
-        Desenvolvedor em formação, focado em front-end e integração com back-end.
-        Curto criar interfaces com identidade visual forte, lógica funcional
-        e projetos que mostrem evolução real de aprendizado.
-      </p>
-    </article>
-  </section>
+  async function load() {
+    try {
+      const res = await fetch(API);
+      const data = await res.json();
+      document.getElementById('status').innerText = `STATUS: ONLINE | NÚCLEOS: ${data.length}`;
+      
+      const container = document.getElementById('container');
+      container.innerHTML = '';
+      
+      data.forEach(p => {
+        container.innerHTML += `
+          <div class="card">
+            <button class="btn-del" onclick="delProject('${p.title}')">[X]</button>
+            <h3>> ${p.title}</h3>
+            <p>${p.description}</p>
+            <span class="tech">${p.tech}</span>
+          </div>`;
+      });
+    } catch (e) {
+      document.getElementById('status').innerText = "STATUS: SERVIDOR OFFLINE (LIGUE O NODE)";
+    }
+  }
 
-  <!-- EVOLUÇÃO / APRENDIZADOS -->
-  <section>
-    <article class="card">
-      <h2>&gt; Evolução_e_Aprendizados</h2>
-      <ul>
-        <li>✔ HTML semântico e acessível</li>
-        <li>✔ CSS moderno (grid, responsivo, identidade visual)</li>
-        <li>✔ JavaScript para lógica, filtros e cálculos</li>
-        <li>✔ Organização de projetos e versionamento com Git</li>
-        <li>✔ Preparação para integração com APIs e banco de dados</li>
-      </ul>
-    </article>
-  </section>
+  async function addProject() {
+    const title = document.getElementById('t').value;
+    const description = document.getElementById('d').value;
+    const tech = document.getElementById('tc').value;
 
-  <!-- PROJETOS -->
-  <section>
-    <h2>&gt; Projetos</h2>
-    <div class="projects">
+    if(!title) return alert("Defina um título!");
 
-      <div class="card project-card">
-        <h3>Relógio Digital</h3>
-        <p>Relógio em tempo real com foco em lógica JavaScript e visual cyberpunk.</p>
-        <span class="tech">HTML • CSS • JavaScript</span>
-      </div>
+    await fetch(API, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({ title, description, tech })
+    });
 
-      <div class="card project-card">
-        <h3>Garagem de Luxo</h3>
-        <p>Sistema visual de carros com filtros, cálculos e layout profissional.</p>
-        <span class="tech">HTML • CSS • JavaScript</span>
-      </div>
+    document.getElementById('t').value = '';
+    document.getElementById('d').value = '';
+    document.getElementById('tc').value = '';
+    load();
+  }
 
-      <div class="card project-card">
-        <h3>Currículo Interativo</h3>
-        <p>Currículo online com identidade visual e organização clara.</p>
-        <span class="tech">HTML • CSS</span>
-      </div>
+  async function delProject(title) {
+    if(confirm(`Eliminar ${title}?`)) {
+      await fetch(API + '/' + encodeURIComponent(title), { method: 'DELETE' });
+      load();
+    }
+  }
 
-    </div>
-  </section>
-
-  <!-- TECNOLOGIAS -->
-  <section>
-    <article class="card">
-      <h2>&gt; Tecnologias</h2>
-      <p>HTML | CSS | JavaScript | Git | GitHub | Node.js (em evolução)</p>
-    </article>
-  </section>
-
-  <!-- CONTATO -->
-  <section>
-    <article class="card">
-      <h2>&gt; Contato</h2>
-      <p>Email: <a href="mailto:airton72@gmail.com">airton72@gmail.com</a></p>
-      <p>WhatsApp: <a href="tel:+5521990670499">+55 21 99067-0499</a></p>
-    </article>
-  </section>
-
-</main>
-
-<footer>
-  © 2026 | System Online ▓▒░ Desenvolvido por Airton Oliveira
-</footer>
+  window.onload = load;
+</script>
 
 </body>
 </html>
