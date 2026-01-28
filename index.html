@@ -2,162 +2,216 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Portfólio Hacker | Airton</title>
+  <title>Portfólio Hacker | Airton Oliveira</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Fonte Hacker -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
       font-family: 'Share Tech Mono', monospace;
       background: radial-gradient(circle at top, #020202, #000);
       color: #00ffcc;
-      overflow-x: hidden;
+      line-height: 1.6;
     }
+
     header {
       text-align: center;
-      padding: 60px 20px;
+      padding: 80px 20px;
     }
+
     h1 {
       font-size: 3rem;
-      text-shadow: 0 0 10px #00ffcc;
+      text-shadow: 0 0 12px #00ffcc;
       animation: glitch 2s infinite;
     }
+
     h2 {
-      margin-bottom: 15px;
       color: #00ffaa;
+      margin-bottom: 15px;
     }
-    section {
-      padding: 40px 20px;
-      max-width: 900px;
+
+    main {
+      max-width: 1000px;
       margin: auto;
-    }
-    .card {
-      background: rgba(0, 0, 0, 0.6);
-      border: 1px solid #00ffcc;
-      border-radius: 8px;
       padding: 20px;
-      margin-bottom: 20px;
-      box-shadow: 0 0 15px rgba(0, 255, 204, 0.3);
     }
+
+    section {
+      margin-bottom: 50px;
+    }
+
+    .card {
+      background: rgba(0, 0, 0, 0.65);
+      border: 1px solid #00ffcc;
+      border-radius: 10px;
+      padding: 25px;
+      box-shadow: 0 0 18px rgba(0, 255, 204, 0.35);
+    }
+
     .projects {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 20px;
     }
+
+    .project-card h3 {
+      margin-bottom: 8px;
+      color: #00ffaa;
+    }
+
+    .project-card p {
+      font-size: 0.95rem;
+      margin-bottom: 10px;
+    }
+
+    .tech {
+      font-size: 0.85rem;
+      opacity: 0.8;
+    }
+
     a {
       color: #00ffcc;
       text-decoration: none;
     }
-    a:hover { text-shadow: 0 0 8px #00ffcc; }
+
+    a:hover {
+      text-shadow: 0 0 8px #00ffcc;
+    }
 
     footer {
       text-align: center;
-      padding: 20px;
+      padding: 25px;
       border-top: 1px solid #00ffcc;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
+      opacity: 0.8;
     }
 
+    /* BOTÕES */
+    .btn {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 25px;
+      border: 2px solid #00ffcc;
+      border-radius: 6px;
+      color: #00ffcc;
+      font-weight: bold;
+      text-shadow: 0 0 5px #00ffcc;
+      box-shadow: 0 0 12px #00ffcc;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: rgba(0,255,204,0.1);
+      box-shadow: 0 0 25px #00ffcc inset;
+    }
+
+    /* GLITCH */
     @keyframes glitch {
       0% { text-shadow: 2px 0 red, -2px 0 cyan; }
       50% { text-shadow: -2px 0 red, 2px 0 cyan; }
       100% { text-shadow: 2px 0 red, -2px 0 cyan; }
     }
-
-    /* BOTÕES HACKER */
-    .btn-hacker {
-      display: inline-block;
-      margin: 10px;
-      padding: 12px 25px;
-      border: 2px solid #00ffcc;
-      color: #00ffcc;
-      font-weight: bold;
-      border-radius: 6px;
-      text-decoration: none;
-      text-shadow: 0 0 5px #00ffcc;
-      box-shadow: 0 0 10px #00ffcc;
-      transition: 0.3s;
-    }
-    .btn-hacker:hover {
-      background-color: rgba(0,255,204,0.1);
-      box-shadow: 0 0 20px #00ffcc, 0 0 30px #00ffcc inset;
-      cursor: pointer;
-    }
-
-    /* BOTÃO PEQUENO PARA RELÓGIO */
-    .btn-clock {
-      display: inline-block;
-      margin: 10px;
-      padding: 8px 15px;
-      border: 2px solid #00ffcc;
-      color: #00ffcc;
-      font-weight: bold;
-      border-radius: 6px;
-      text-decoration: none;
-      text-shadow: 0 0 5px #00ffcc;
-      box-shadow: 0 0 10px #00ffcc;
-      font-size: 0.9rem;
-      transition: 0.3s;
-    }
-    .btn-clock:hover {
-      background-color: rgba(0,255,204,0.1);
-      box-shadow: 0 0 20px #00ffcc, 0 0 30px #00ffcc inset;
-      cursor: pointer;
-    }
   </style>
 </head>
+
 <body>
+
 <header>
   <h1>&gt; Airton Oliveira</h1>
-  <p>Front-end em treinamento | HTML • CSS • JS</p>
+  <p>Desenvolvedor em evolução | Front-end → Fullstack</p>
 
-  <!-- BOTÕES HACKER -->
   <div>
-    <!-- Currículo HTML -->
-    <a class="btn-hacker" href="https://airton72-arch.github.io/curriculo-pro/" target="_blank">
-      🧾 Currículo HTML
-    </a>
-    <!-- Relógio -->
-    <a class="btn-clock" href="https://airton72-arch.github.io/meu-site-2/" target="_blank">
-      ⏰ Relógio
-    </a>
+    <a class="btn" href="https://airton72-arch.github.io/curriculo-pro/" target="_blank">🧾 Currículo HTML</a>
+    <a class="btn" href="https://airton72-arch.github.io/meu-site-2/" target="_blank">⏰ Projeto Relógio</a>
   </div>
 </header>
 
-<section>
-  <div class="card">
-    <h2>&gt; Sobre_mim</h2>
-    <p>Estudante de programação focado em front-end. Curto tecnologia, visual e projetos criativos. Em constante evolução 🚀</p>
-  </div>
-</section>
+<main>
 
-<section>
-  <h2>&gt; Projetos</h2>
-  <div class="projects">
-    <div class="card">Relógio Digital<br><small>HTML • CSS • JS</small></div>
-    <div class="card">Calculadora<br><small>HTML • CSS • JS</small></div>
-    <div class="card">Página Hacker Neon<br><small>HTML • CSS</small></div>
-  </div>
-</section>
+  <!-- SOBRE -->
+  <section>
+    <article class="card">
+      <h2>&gt; Sobre_mim</h2>
+      <p>
+        Desenvolvedor em formação, focado em front-end e integração com back-end.
+        Curto criar interfaces com identidade visual forte, lógica funcional
+        e projetos que mostrem evolução real de aprendizado.
+      </p>
+    </article>
+  </section>
 
-<section>
-  <div class="card">
-    <h2>&gt; Tecnologias</h2>
-    <p>HTML | CSS | JavaScript | Git | GitHub</p>
-  </div>
-</section>
+  <!-- EVOLUÇÃO / APRENDIZADOS -->
+  <section>
+    <article class="card">
+      <h2>&gt; Evolução_e_Aprendizados</h2>
+      <ul>
+        <li>✔ HTML semântico e acessível</li>
+        <li>✔ CSS moderno (grid, responsivo, identidade visual)</li>
+        <li>✔ JavaScript para lógica, filtros e cálculos</li>
+        <li>✔ Organização de projetos e versionamento com Git</li>
+        <li>✔ Preparação para integração com APIs e banco de dados</li>
+      </ul>
+    </article>
+  </section>
 
-<section>
-  <div class="card">
-    <h2>&gt; Contato</h2>
-    <p>Email: airton72@gmail.com</p>
-    <p>WhatsApp: 21990670499</p>
-  </div>
-</section>
+  <!-- PROJETOS -->
+  <section>
+    <h2>&gt; Projetos</h2>
+    <div class="projects">
+
+      <div class="card project-card">
+        <h3>Relógio Digital</h3>
+        <p>Relógio em tempo real com foco em lógica JavaScript e visual cyberpunk.</p>
+        <span class="tech">HTML • CSS • JavaScript</span>
+      </div>
+
+      <div class="card project-card">
+        <h3>Garagem de Luxo</h3>
+        <p>Sistema visual de carros com filtros, cálculos e layout profissional.</p>
+        <span class="tech">HTML • CSS • JavaScript</span>
+      </div>
+
+      <div class="card project-card">
+        <h3>Currículo Interativo</h3>
+        <p>Currículo online com identidade visual e organização clara.</p>
+        <span class="tech">HTML • CSS</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- TECNOLOGIAS -->
+  <section>
+    <article class="card">
+      <h2>&gt; Tecnologias</h2>
+      <p>HTML | CSS | JavaScript | Git | GitHub | Node.js (em evolução)</p>
+    </article>
+  </section>
+
+  <!-- CONTATO -->
+  <section>
+    <article class="card">
+      <h2>&gt; Contato</h2>
+      <p>Email: <a href="mailto:airton72@gmail.com">airton72@gmail.com</a></p>
+      <p>WhatsApp: <a href="tel:+5521990670499">+55 21 99067-0499</a></p>
+    </article>
+  </section>
+
+</main>
 
 <footer>
-  <p>© 2026 | System Online ▓▒░</p>
+  © 2026 | System Online ▓▒░ Desenvolvido por Airton Oliveira
 </footer>
+
 </body>
 </html>
